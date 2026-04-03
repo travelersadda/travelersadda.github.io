@@ -1,15 +1,207 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travelers Adda - Wander Stories & Hidden Gems</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Global Nomad | Personal Travel Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        
+        :root {
+            --accent: #d4a373;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+        
+        .custom-gradient {
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
+        }
+        .glass-footer {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Container 1: Minimalist Nav -->
+    <nav class="flex justify-between items-center px-8 py-6 border-b border-gray-100 sticky top-0 bg-white/80 backdrop-blur-md z-50">
+        <div class="text-xs uppercase tracking-[0.3em] font-bold">The Global Nomad</div>
+        <div class="hidden md:flex space-x-10 text-sm uppercase tracking-widest font-semibold">
+            <a href="#" class="hover:text-amber-700 transition">Journals</a>
+            <a href="#" class="hover:text-amber-700 transition">Guides</a>
+            <a href="#" class="hover:text-amber-700 transition">Photography</a>
+            <a href="#" class="hover:text-amber-700 transition">About</a>
+        </div>
+        <div class="flex items-center space-x-5">
+            <i class="fa-solid fa-magnifying-glass text-sm cursor-pointer"></i>
+            <button class="bg-black text-white text-xs px-5 py-2 uppercase tracking-tighter">Subscribe</button>
+        </div>
+    </nav>
+
+    <!-- Container 2: Magazine Hero Section -->
+    <header class="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Hero Image">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative text-center text-white px-4 max-w-3xl">
+            <span class="uppercase tracking-[0.4em] text-xs mb-4 block">Summer Edition 2026</span>
+            <h1 class="text-5xl md:text-8xl mb-6">Chasing the Tuscan Golden Hour</h1>
+            <p class="text-lg italic font-light mb-8">A ten-day journey through the rolling vineyards and cobblestone dreams of Italy.</p>
+            <a href="#" class="inline-block border border-white px-10 py-4 hover:bg-white hover:text-black transition duration-300 uppercase text-xs tracking-widest">Read the Story</a>
+        </div>
+    </header>
+
+    <!-- Container 3: Featured Editorials (Grid) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <h2 class="text-4xl mb-2">Latest Narratives</h2>
+            <div class="h-1 w-20 bg-amber-600 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-8 relative group overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" class="w-full h-[500px] object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-700">
+                <div class="absolute inset-0 custom-gradient"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <span class="text-xs uppercase tracking-widest mb-2 block">Adventure</span>
+                    <h3 class="text-3xl mb-4">Solo Hiking the Fjords of Norway</h3>
+                    <button class="text-sm border-b border-white pb-1">Read Post</button>
+                </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col gap-8">
+                <div class="bg-slate-50 p-8 border-t-4 border-amber-600">
+                    <h4 class="text-xl mb-4">Travel Tip of the Month</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed italic">"Always carry a physical map. Technology fails, but the ink on paper remains a loyal guide in the mountains."</p>
+                    <p class="mt-4 font-bold text-xs">— The Nomad Team</p>
+                </div>
+                <div class="relative h-full group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                        <span class="text-white border border-white px-4 py-2">View Gallery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container 4: Parallax Breakout -->
+    <section class="relative h-[60vh] bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-white/10 backdrop-contrast-125"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="bg-white p-12 text-center max-w-xl shadow-2xl">
+                <h2 class="text-3xl mb-4 uppercase tracking-tighter">Join the Expedition</h2>
+                <p class="text-gray-500 mb-6">Receive monthly travel inspiration, hidden location coordinates, and photography presets directly in your inbox.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Email Address" class="flex-1 bg-gray-100 px-4 py-3 outline-none">
+                    <button class="bg-amber-700 text-white px-6 py-3 uppercase text-xs">Join</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container 5: Content Feed / Destinations -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl">Explore by Region</h2>
+                <div class="flex space-x-4 text-sm font-bold text-gray-400">
+                    <span class="text-black border-b-2 border-black cursor-pointer">Asia</span>
+                    <span class="hover:text-black cursor-pointer">Europe</span>
+                    <span class="hover:text-black cursor-pointer">Americas</span>
+                    <span class="hover:text-black cursor-pointer">Africa</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Repeatable Blog Card -->
+                <div class="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80" class="group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] text-amber-600 font-bold uppercase tracking-widest">Culture</span>
+                        <h3 class="text-lg my-2">The Silent Temples of Kyoto</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Finding peace in the middle of Japan's most historic city...</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1518548419970-58e3b40e9bd1?auto=format&fit=crop&w=500&q=80" class="group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] text-amber-600 font-bold uppercase tracking-widest">Food</span>
+                        <h3 class="text-lg my-2">Spices of Vietnam</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">A culinary guide through the bustling streets of Hanoi...</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=80" class="group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] text-amber-600 font-bold uppercase tracking-widest">Resorts</span>
+                        <h3 class="text-lg my-2">Bali's Hidden Blue Lagoon</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Where the tourists don't go and the water is crystal clear...</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white group cursor-pointer shadow-sm hover:shadow-xl transition">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=80" class="group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[10px] text-amber-600 font-bold uppercase tracking-widest">Hiking</span>
+                        <h3 class="text-lg my-2">The Peaks of Patagonia</h3>
+                        <p class="text-gray-400 text-xs leading-relaxed">Everything you need to pack for the ultimate trek...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container 6: Unique Modern Footer -->
+    <footer class="glass-footer text-white pt-20 pb-10 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <h2 class="text-4xl serif mb-6">Let's get lost together.</h2>
+                    <p class="text-gray-400 max-w-sm mb-8 leading-loose">Dedicated to the slow travelers, the street-food lovers, and the ones who always take the scenic route.</p>
+                    <div class="flex space-x-6 text-xl">
+                        <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="hover:text-amber-500 transition"><i class="fab fa-vimeo-v"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-amber-500">Navigation</h4>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">Start Here</a></li>
+                        <li><a href="#" class="hover:text-white transition">Destinations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Photography Gear</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-amber-500">Contact</h4>
+                    <p class="text-sm text-gray-300 mb-2">General: hello@globalnomad.com</p>
+                    <p class="text-sm text-gray-300">Partnerships: ads@globalnomad.com</p>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:row justify-between items-center text-[10px] uppercase tracking-widest text-gray-500">
+                <p>&copy; 2026 THE GLOBAL NOMAD. DESIGNED FOR THE CURIOUS.</p>
+                <div class="mt-4 md:mt-0 flex space-x-8">
+                    <span>Terms of Service</span>
+                    <span>Cookie Policy</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
