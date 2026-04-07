@@ -4,95 +4,214 @@
     <meta charset="UTF-8">
     <title>Travelers Adda | Home</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f8f9fa; color: #333;">
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333;">
 
-    <div style="background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <div style="font-size: 28px; font-weight: bold; color: #FF512F;">Travelers Adda</div>
-        <div style="display: flex; gap: 20px;">
-            <a href="index.html" style="text-decoration: none; color: #333; font-weight: bold;">Home</a>
-            <a href="destinations.html" style="text-decoration: none; color: #333; font-weight: bold;">Destinations</a>
-            <a href="blog.html" style="text-decoration: none; color: #333; font-weight: bold;">Blog</a>
-            <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold;">About</a>
-            <a href="contact.html" style="text-decoration: none; color: #333; font-weight: bold;">Contact</a>
+    <div style="background-color: #ffffff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;">
+        <div style="font-size: 30px; font-weight: 800; color: #FF512F; letter-spacing: 1px;">Travelers Adda</div>
+        <div style="display: flex; gap: 30px;">
+            <a href="index.html" style="text-decoration: none; color: #FF512F; font-weight: bold; font-size: 16px;">Home</a>
+            <a href="destinations.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">Destinations</a>
+            <a href="blog.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">Blog</a>
+            <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">About</a>
         </div>
     </div>
 
-    <div style="background: linear-gradient(135deg, #FF512F, #F09819); padding: 100px 20px; text-align: center; color: white;">
-        <h1 style="font-size: 50px; margin-bottom: 10px;">Your Ultimate Travel Adda</h1>
-        <p style="font-size: 20px; margin-bottom: 30px;">Discover breathtaking destinations, vibrant cultures, and hidden gems.</p>
-        <a href="destinations.html" style="background-color: white; color: #FF512F; padding: 15px 30px; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 25px;">Start Exploring</a>
+    <div style="position: relative; height: 85vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden;">
+        <video autoplay loop muted playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: -2; object-fit: cover;">
+            <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: -1;"></div>
+        
+        <div style="z-index: 1; max-width: 800px; padding: 20px;">
+            <h1 style="font-size: 60px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px;">Your Ultimate Travel Adda</h1>
+            <p style="font-size: 22px; margin-bottom: 40px; line-height: 1.6; font-weight: 300;">Escape the ordinary. Discover breathtaking destinations, vibrant cultures, and hidden gems around the globe.</p>
+            <a href="destinations.html" style="background: linear-gradient(135deg, #FF512F, #F09819); color: white; padding: 18px 40px; text-decoration: none; font-size: 20px; font-weight: bold; border-radius: 30px; box-shadow: 0 10px 20px rgba(255, 81, 47, 0.3);">Start Exploring</a>
+        </div>
     </div>
 
-    <div style="padding: 60px 20px; text-align: center; background-color: white;">
-        <h2 style="color: #11998e; font-size: 36px; margin-bottom: 40px;">Trending Destinations</h2>
+    <div style="padding: 80px 5%; background-color: white;">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: #11998e; font-size: 40px; margin-bottom: 10px;">Must-Visit Destinations</h2>
+            <p style="color: #666; font-size: 18px;">Curated locations for your next unforgettable adventure.</p>
+        </div>
+        
         <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-            <div style="width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=300&h=200&fit=crop" alt="Bali" style="width: 100%; height: 200px; object-fit: cover;">
-                <div style="padding: 20px;">
-                    <h3 style="margin: 0; color: #FF512F;">Bali, Indonesia</h3>
-                    <p>Tropical paradise awaits.</p>
+            <div style="width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; background: #fff; transition: transform 0.3s;">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=250&fit=crop" alt="Bali" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <div style="background: #e0f2f1; color: #11998e; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px;">ASIA</div>
+                    <h3 style="margin: 0 0 10px 0; color: #333; font-size: 24px;">Bali, Indonesia</h3>
+                    <p style="color: #666; font-size: 15px; line-height: 1.5; margin-bottom: 15px;">Experience tropical beaches, ancient temples, and lush green rice terraces. Perfect for spiritual retreats and surfing.</p>
+                    <p style="margin: 0; font-size: 14px; color: #FF512F;"><strong>Best time to visit:</strong> May to September</p>
                 </div>
             </div>
-            <div style="width: 300px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); overflow: hidden;">
-                <img src="https://images.unsplash.com/photo-1502602898657-3e90761138c1?w=300&h=200&fit=crop" alt="Paris" style="width: 100%; height: 200px; object-fit: cover;">
-                <div style="padding: 20px;">
-                    <h3 style="margin: 0; color: #FF512F;">Paris, France</h3>
-                    <p>The city of love and lights.</p>
+            <div style="width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=250&fit=crop" alt="Paris" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <div style="background: #e3f2fd; color: #1565c0; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px;">EUROPE</div>
+                    <h3 style="margin: 0 0 10px 0; color: #333; font-size: 24px;">Paris, France</h3>
+                    <p style="color: #666; font-size: 15px; line-height: 1.5; margin-bottom: 15px;">The city of lights offers world-class cuisine, art museums like the Louvre, and iconic monuments.</p>
+                    <p style="margin: 0; font-size: 14px; color: #FF512F;"><strong>Best time to visit:</strong> April to June</p>
+                </div>
+            </div>
+            <div style="width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=250&fit=crop" alt="Kyoto" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <div style="background: #e0f2f1; color: #11998e; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px;">ASIA</div>
+                    <h3 style="margin: 0 0 10px 0; color: #333; font-size: 24px;">Kyoto, Japan</h3>
+                    <p style="color: #666; font-size: 15px; line-height: 1.5; margin-bottom: 15px;">Step back in time with historic wooden architecture, traditional tea houses, and stunning cherry blossoms.</p>
+                    <p style="margin: 0; font-size: 14px; color: #FF512F;"><strong>Best time to visit:</strong> March to May</p>
+                </div>
+            </div>
+            <div style="width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=400&h=250&fit=crop" alt="Swiss Alps" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <div style="background: #e3f2fd; color: #1565c0; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px;">EUROPE</div>
+                    <h3 style="margin: 0 0 10px 0; color: #333; font-size: 24px;">Swiss Alps</h3>
+                    <p style="color: #666; font-size: 15px; line-height: 1.5; margin-bottom: 15px;">A haven for skiing, snowboarding, and summer hiking among some of the most dramatic mountain peaks on Earth.</p>
+                    <p style="margin: 0; font-size: 14px; color: #FF512F;"><strong>Best time to visit:</strong> Dec to March (Winter)</p>
+                </div>
+            </div>
+            <div style="width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=400&h=250&fit=crop" alt="Machu Picchu" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <div style="background: #fce4ec; color: #c2185b; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px;">SOUTH AMERICA</div>
+                    <h3 style="margin: 0 0 10px 0; color: #333; font-size: 24px;">Machu Picchu, Peru</h3>
+                    <p style="color: #666; font-size: 15px; line-height: 1.5; margin-bottom: 15px;">Hike the famous Inca Trail to witness these breathtaking ancient ruins set high in the Andes mountains.</p>
+                    <p style="margin: 0; font-size: 14px; color: #FF512F;"><strong>Best time to visit:</strong> May to October</p>
+                </div>
+            </div>
+            <div style="width: 350px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); overflow: hidden; background: #fff;">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5f1?w=400&h=250&fit=crop" alt="Santorini" style="width: 100%; height: 250px; object-fit: cover;">
+                <div style="padding: 25px;">
+                    <div style="background: #e3f2fd; color: #1565c0; display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 10px;">EUROPE</div>
+                    <h3 style="margin: 0 0 10px 0; color: #333; font-size: 24px;">Santorini, Greece</h3>
+                    <p style="color: #666; font-size: 15px; line-height: 1.5; margin-bottom: 15px;">Famous for its stunning sunsets, white-washed buildings, and blue domes overlooking the Aegean Sea.</p>
+                    <p style="margin: 0; font-size: 14px; color: #FF512F;"><strong>Best time to visit:</strong> September to October</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div style="background: linear-gradient(135deg, #11998e, #38ef7d); padding: 60px 20px; text-align: center; color: white;">
-        <h2 style="font-size: 36px; margin-bottom: 40px;">Choose Your Travel Style</h2>
+    <div style="background: linear-gradient(135deg, #11998e, #38ef7d); padding: 80px 20px; text-align: center; color: white;">
+        <h2 style="font-size: 40px; margin-bottom: 10px;">How Do You Like to Travel?</h2>
+        <p style="font-size: 18px; margin-bottom: 50px;">Find guides tailored exactly to your travel style.</p>
         <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px; width: 250px;">
-                <h3 style="font-size: 24px;">🎒 Backpacking</h3>
-                <p>Budget travel guides and tips.</p>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px 30px; border-radius: 15px; width: 280px; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="font-size: 50px; margin-bottom: 15px;">🎒</div>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">Backpacking</h3>
+                <p style="font-size: 16px;">Hostels, street food, and saving money while seeing the world.</p>
             </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px; width: 250px;">
-                <h3 style="font-size: 24px;">🏖️ Luxury Resorts</h3>
-                <p>Premium stays and relaxing getaways.</p>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px 30px; border-radius: 15px; width: 280px; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="font-size: 50px; margin-bottom: 15px;">🥂</div>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">Luxury Escapes</h3>
+                <p style="font-size: 16px;">5-star resorts, private villas, and fine dining experiences.</p>
             </div>
-            <div style="background: rgba(255,255,255,0.2); padding: 30px; border-radius: 15px; width: 250px;">
-                <h3 style="font-size: 24px;">🏔️ Adventure</h3>
-                <p>Hiking, climbing, and extreme sports.</p>
-            </div>
-        </div>
-    </div>
-
-    <div style="padding: 60px 20px; text-align: center; background-color: #f8f9fa;">
-        <h2 style="color: #FF512F; font-size: 36px; margin-bottom: 30px;">Latest from the Adda</h2>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <div style="background-color: white; padding: 20px; border-radius: 10px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h4 style="color: #333;">10 Things to Pack for Europe</h4>
-                <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
-            </div>
-            <div style="background-color: white; padding: 20px; border-radius: 10px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h4 style="color: #333;">How to Travel on a Budget</h4>
-                <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
-            </div>
-            <div style="background-color: white; padding: 20px; border-radius: 10px; width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h4 style="color: #333;">Best Street Food in Asia</h4>
-                <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold;">Read Article &rarr;</a>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px 30px; border-radius: 15px; width: 280px; border: 1px solid rgba(255,255,255,0.2);">
+                <div style="font-size: 50px; margin-bottom: 15px;">🏔️</div>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">Adventure</h3>
+                <p style="font-size: 16px;">Trekking, scuba diving, and pushing your limits in nature.</p>
             </div>
         </div>
     </div>
 
-    <div style="background-color: #2d3436; padding: 60px 20px; text-align: center; color: white;">
-        <h2 style="font-size: 32px;">Join the Travelers Adda Community</h2>
-        <p style="margin-bottom: 20px;">Get weekly travel tips and exclusive deals sent to your inbox!</p>
-        <input type="email" placeholder="Enter your email" style="padding: 15px; width: 300px; border-radius: 25px; border: none; outline: none; font-size: 16px;">
-        <button style="padding: 15px 30px; background-color: #FF512F; color: white; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer;">Subscribe</button>
+    <div style="padding: 80px 5%; background-color: #f4f7f6;">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: #FF512F; font-size: 40px; margin-bottom: 10px;">Latest Travel Stories & Tips</h2>
+            <p style="color: #666; font-size: 18px;">Dive into our latest articles categorized by your interests.</p>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <div style="width: 350px; background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=250&fit=crop" alt="Food" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #FF512F; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 12px;">FOOD & DRINK</span>
+                </div>
+                <div style="padding: 25px;">
+                    <h3 style="margin: 0 0 10px 0; font-size: 22px; color: #333;">The Ultimate Guide to Asian Street Food</h3>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.5;">From Pad Thai in Bangkok to Takoyaki in Osaka, discover the dishes you must try.</p>
+                    <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold; border-bottom: 2px solid #11998e; padding-bottom: 2px;">Read Article &rarr;</a>
+                </div>
+            </div>
+
+            <div style="width: 350px; background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1553531384-cc64ac80f931?w=400&h=250&fit=crop" alt="Packing" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #4A00E0; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 12px;">TIPS & GEAR</span>
+                </div>
+                <div style="padding: 25px;">
+                    <h3 style="margin: 0 0 10px 0; font-size: 22px; color: #333;">10 Things You Must Pack for Europe</h3>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.5;">Don't board your flight without these essential items in your carry-on luggage.</p>
+                    <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold; border-bottom: 2px solid #11998e; padding-bottom: 2px;">Read Article &rarr;</a>
+                </div>
+            </div>
+
+            <div style="width: 350px; background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=250&fit=crop" alt="Budget" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #00C9FF; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 12px;">BUDGET TRAVEL</span>
+                </div>
+                <div style="padding: 25px;">
+                    <h3 style="margin: 0 0 10px 0; font-size: 22px; color: #333;">How to Travel the World on $50 a Day</h3>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.5;">Yes, it is possible. Learn the best hacks for cheap flights, accommodation, and food.</p>
+                    <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold; border-bottom: 2px solid #11998e; padding-bottom: 2px;">Read Article &rarr;</a>
+                </div>
+            </div>
+            
+            <div style="width: 350px; background-color: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=250&fit=crop" alt="Itinerary" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+                    <span style="position: absolute; top: 15px; left: 15px; background: #F09819; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 12px;">ITINERARIES</span>
+                </div>
+                <div style="padding: 25px;">
+                    <h3 style="margin: 0 0 10px 0; font-size: 22px; color: #333;">2 Weeks in Italy: The Perfect Route</h3>
+                    <p style="color: #666; margin-bottom: 20px; line-height: 1.5;">Rome, Florence, Venice, and the Amalfi Coast. A day-by-day guide to Italy.</p>
+                    <a href="blog.html" style="color: #11998e; text-decoration: none; font-weight: bold; border-bottom: 2px solid #11998e; padding-bottom: 2px;">Read Article &rarr;</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div style="padding: 60px 20px; text-align: center; background-color: white;">
-        <h2 style="color: #F09819; font-size: 36px;">What Travelers Say</h2>
-        <p style="font-size: 20px; font-style: italic; color: #555; max-width: 600px; margin: 0 auto;">"Travelers Adda helped me plan the perfect solo trip to Vietnam! The guides are so detailed and colorful."<br> <br>- Sarah W.</p>
+    <div style="background: linear-gradient(rgba(45,52,54,0.9), rgba(45,52,54,0.9)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&h=400&fit=crop') center/cover; padding: 80px 20px; text-align: center; color: white;">
+        <h2 style="font-size: 36px; margin-bottom: 15px;">Join 50,000+ Travel Enthusiasts</h2>
+        <p style="font-size: 18px; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Get our best travel secrets, itinerary PDFs, and exclusive hotel discounts delivered straight to your inbox every Sunday.</p>
+        <div style="display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 0 auto;">
+            <input type="email" placeholder="Enter your email address" style="flex: 1; padding: 18px 25px; border-radius: 30px; border: none; outline: none; font-size: 16px;">
+            <button style="padding: 18px 35px; background-color: #FF512F; color: white; border: none; border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(255,81,47,0.3);">Subscribe</button>
+        </div>
     </div>
 
-    <div style="background-color: #1a1a1a; padding: 30px; text-align: center; color: #aaaaaa;">
-        <p>&copy; 2026 Travelers Adda. All rights reserved. Keep Exploring.</p>
+    <div style="padding: 80px 20px; text-align: center; background-color: white;">
+        <h2 style="color: #F09819; font-size: 36px; margin-bottom: 40px;">Stories From Our Community</h2>
+        
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div style="width: 300px; padding: 30px; background: #f8f9fa; border-radius: 15px; position: relative;">
+                <div style="font-size: 40px; color: #FF512F; position: absolute; top: -20px; left: 20px;">"</div>
+                <p style="font-size: 16px; font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.6;">Travelers Adda helped me plan the perfect solo trip to Vietnam! Their detailed itineraries saved me hours of research.</p>
+                <h4 style="margin: 0; color: #333;">- Sarah W.</h4>
+                <p style="margin: 5px 0 0 0; font-size: 12px; color: #999;">Solo Traveler</p>
+            </div>
+            
+            <div style="width: 300px; padding: 30px; background: #f8f9fa; border-radius: 15px; position: relative;">
+                <div style="font-size: 40px; color: #FF512F; position: absolute; top: -20px; left: 20px;">"</div>
+                <p style="font-size: 16px; font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.6;">The budget guides are incredibly accurate. I managed to travel across Europe for a month without breaking the bank.</p>
+                <h4 style="margin: 0; color: #333;">- James & Lily</h4>
+                <p style="margin: 5px 0 0 0; font-size: 12px; color: #999;">Backpacking Couple</p>
+            </div>
+            
+            <div style="width: 300px; padding: 30px; background: #f8f9fa; border-radius: 15px; position: relative;">
+                <div style="font-size: 40px; color: #FF512F; position: absolute; top: -20px; left: 20px;">"</div>
+                <p style="font-size: 16px; font-style: italic; color: #555; margin-bottom: 20px; line-height: 1.6;">I found the best hidden gems in Kyoto thanks to the community forum. Truly a lifesaver for finding authentic food spots!</p>
+                <h4 style="margin: 0; color: #333;">- Mike T.</h4>
+                <p style="margin: 5px 0 0 0; font-size: 12px; color: #999;">Food Enthusiast</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: #1a1a1a; padding: 40px 20px; text-align: center; color: #aaaaaa; border-top: 5px solid #FF512F;">
+        <h2 style="color: white; margin-bottom: 10px;">Travelers Adda</h2>
+        <p style="margin-bottom: 20px; font-size: 14px;">Inspiring the world to explore more.</p>
+        <p style="font-size: 14px;">&copy; 2026 Travelers Adda. All rights reserved.</p>
     </div>
 
 </body>
