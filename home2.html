@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelSphere | Next-Gen Travel Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-effect { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        .glass-dark { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-gray-800 overflow-x-hidden">
+
+    <!-- Navbar (Glassmorphism & Responsive) -->
+    <nav class="glass-effect shadow-sm fixed w-full top-0 z-50 border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 cursor-pointer z-50">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-blue-600/30">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <span class="text-xl sm:text-2xl font-extrabold text-gray-900 tracking-tight">Travel<span class="text-blue-600">Sphere</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-1">Discover</a>
+                    <a href="#destinations" class="text-gray-500 hover:text-gray-900 font-medium transition">Destinations</a>
+                    <a href="#blogs" class="text-gray-500 hover:text-gray-900 font-medium transition">Stories</a>
+                    <a href="#community" class="text-gray-500 hover:text-gray-900 font-medium transition">Community</a>
+                    <div class="h-6 w-px bg-gray-300"></div>
+                    <a href="#contact" class="text-gray-900 font-semibold hover:text-blue-600 transition">Write</a>
+                    <a href="#signup" class="bg-gray-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-600/30 transition-all duration-300">Join Free</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center z-50">
+                    <button id="mobile-menu-btn" class="text-gray-900 focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300">
+            <div class="flex flex-col px-6 py-6 space-y-5">
+                <a href="#" class="text-blue-600 font-extrabold text-lg">Discover</a>
+                <a href="#destinations" class="text-gray-600 font-semibold text-lg hover:text-blue-600">Destinations</a>
+                <a href="#blogs" class="text-gray-600 font-semibold text-lg hover:text-blue-600">Stories</a>
+                <a href="#community" class="text-gray-600 font-semibold text-lg hover:text-blue-600">Community</a>
+                <a href="#contact" class="text-gray-600 font-semibold text-lg hover:text-blue-600">Write a Blog</a>
+                <hr class="border-gray-100">
+                <a href="#signup" class="bg-gray-900 text-white text-center px-6 py-3.5 rounded-xl font-bold w-full shadow-lg">Join Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[80vh] min-h-[500px] flex items-center justify-center pt-20">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80" class="absolute inset-0 w-full h-full object-cover" alt="Hero Background">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#f8fafc]"></div>
+        
+        <div class="relative z-10 w-full max-w-4xl px-4 sm:px-6 text-center mt-[-5vh]">
+            <span class="inline-block py-1.5 px-4 rounded-full bg-white/20 backdrop-blur-md text-white text-xs sm:text-sm font-semibold mb-6 border border-white/30">✨ Join 50,000+ Explorers</span>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight drop-shadow-lg">
+                Find Your Next <br class="hidden sm:block"><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Great Adventure.</span>
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-gray-200 max-w-2xl mx-auto font-light px-2">Read authentic travel stories, discover hidden gems, and connect with a global community of wanderers.</p>
+            
+            <!-- Responsive Search Bar -->
+            <div class="glass-effect p-2 sm:p-2.5 rounded-3xl sm:rounded-full flex flex-col sm:flex-row shadow-2xl max-w-3xl mx-auto border border-white/40 gap-2 sm:gap-0">
+                <div class="flex-1 flex items-center px-4 sm:px-6 py-3 sm:py-3 sm:border-r border-gray-200">
+                    <i class="fas fa-map-marker-alt text-gray-400 mr-3 text-lg"></i>
+                    <input type="text" placeholder="Where do you want to go?" class="w-full bg-transparent border-none focus:outline-none text-gray-800 placeholder-gray-500 font-medium text-base sm:text-lg">
+                </div>
+                <button class="bg-blue-600 text-white px-8 py-3.5 sm:py-4 rounded-2xl sm:rounded-full font-bold hover:bg-blue-700 transition w-full sm:w-auto flex items-center justify-center gap-2">
+                    Search <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Destinations Grid -->
+    <section id="destinations" class="max-w-7xl mx-auto px-4 py-12 sm:py-16 -mt-16 sm:-mt-20 relative z-20">
+        <div class="mb-6 sm:mb-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900">Popular Destinations</h2>
+            <p class="text-gray-500 mt-1 sm:mt-2 font-medium text-sm sm:text-base">Trending spots based on traveler stories.</p>
+        </div>
+        <!-- Grid layout handles mobile (2 cols) and desktop (4 cols) perfectly -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+            <!-- Dest 1 -->
+            <div class="group relative h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer hover-lift">
+                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Bali">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                    <h3 class="text-white text-lg sm:text-xl font-bold">Bali</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm">1,240 Stories</p>
+                </div>
+            </div>
+            <!-- Dest 2 -->
+            <div class="group relative h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer hover-lift">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Paris">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                    <h3 class="text-white text-lg sm:text-xl font-bold">Paris</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm">980 Stories</p>
+                </div>
+            </div>
+            <!-- Dest 3 (Spans full width on mobile) -->
+            <div class="group relative h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer hover-lift col-span-2 lg:col-span-1">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Taj Mahal">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                    <h3 class="text-white text-lg sm:text-xl font-bold">Agra, India</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm">850 Stories</p>
+                </div>
+            </div>
+            <!-- Dest 4 (Hidden on smallest screens to keep grid even, visible on sm and up) -->
+            <div class="group relative h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer hover-lift hidden sm:block lg:block">
+                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Venice">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                    <h3 class="text-white text-lg sm:text-xl font-bold">Venice</h3>
+                    <p class="text-gray-300 text-xs sm:text-sm">620 Stories</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8 lg:gap-12">
+        
+        <!-- LEFT SIDE: Blogs Section -->
+        <div class="w-full lg:w-2/3" id="blogs">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-6 sm:mb-8">Editor's Picks</h2>
+
+            <!-- Featured Large Blog -->
+            <article class="bg-white rounded-2xl sm:rounded-3xl shadow-sm hover-lift overflow-hidden border border-gray-100 mb-8 sm:mb-10 group cursor-pointer relative">
+                <div class="h-[250px] sm:h-[400px] w-full overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Mountains">
+                    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/90 backdrop-blur px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold text-gray-900 shadow-sm flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Featured
+                    </div>
+                </div>
+                <div class="p-5 sm:p-8 relative">
+                    <div class="flex gap-3 mb-3 sm:mb-4">
+                        <span class="text-blue-600 font-bold text-xs sm:text-sm tracking-wide uppercase">Mountains</span>
+                        <span class="text-gray-300">•</span>
+                        <span class="text-gray-500 text-xs sm:text-sm">Oct 24, 2026</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-3 sm:mb-4 group-hover:text-blue-600 transition leading-tight">The Ultimate Guide to Surviving and Thriving in the Swiss Alps</h3>
+                    <p class="text-gray-600 text-sm sm:text-lg mb-6 line-clamp-2 sm:line-clamp-3">Pahadon ki thandi hawayein aur snow-capped peaks. Agar aap apna pehla major trek plan kar rahe hain, toh ye guide aapke liye perfect hai...</p>
+                    <div class="flex items-center justify-between pt-4 sm:pt-6 border-t border-gray-100">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <img src="https://i.pravatar.cc/150?img=32" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white shadow-md" alt="Author">
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-sm sm:text-base">Aisha Khan</h4>
+                                <p class="text-xs sm:text-sm text-gray-500">Pro Trekker</p>
+                            </div>
+                        </div>
+                        <button class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition group-hover:shadow-lg">
+                            <i class="fas fa-arrow-right text-sm sm:text-base"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Standard Blogs Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Blog 1 -->
+                <article class="bg-white rounded-2xl shadow-sm hover-lift border border-gray-100 cursor-pointer flex flex-col h-full">
+                    <div class="h-48 sm:h-52 overflow-hidden rounded-t-2xl relative">
+                        <img src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="City">
+                        <span class="absolute top-4 left-4 bg-gray-900/80 backdrop-blur text-white px-3 py-1 text-xs font-bold rounded-lg">City Guide</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition line-clamp-2">48 Hours in Tokyo: Neon Lights and Ancient Shrines</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">Tokyo ki tez raftaar zindagi aur wahan ke shant mandiron ka ek anokha balance...</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?img=12" class="w-8 h-8 rounded-full" alt="Author">
+                                <span class="text-sm font-semibold text-gray-800">Rohan S.</span>
+                            </div>
+                            <span class="text-xs text-gray-400 font-medium">5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog 2 -->
+                <article class="bg-white rounded-2xl shadow-sm hover-lift border border-gray-100 cursor-pointer flex flex-col h-full">
+                    <div class="h-48 sm:h-52 overflow-hidden rounded-t-2xl relative">
+                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Food">
+                        <span class="absolute top-4 left-4 bg-orange-500/90 backdrop-blur text-white px-3 py-1 text-xs font-bold rounded-lg">Street Food</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col flex-grow">
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition line-clamp-2">Tasting the Streets of Bangkok: A Foodie's Diary</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2 flex-grow">Pad Thai se lekar Mango Sticky Rice tak, Bangkok ka street food kaisa hota hai...</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-50">
+                            <div class="flex items-center gap-2">
+                                <img src="https://i.pravatar.cc/150?img=5" class="w-8 h-8 rounded-full" alt="Author">
+                                <span class="text-sm font-semibold text-gray-800">Priya Das</span>
+                            </div>
+                            <span class="text-xs text-gray-400 font-medium">8 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="mt-8 sm:mt-10 flex justify-center">
+                <button class="bg-white border-2 border-gray-200 text-gray-800 font-bold px-6 sm:px-8 py-3 rounded-full hover:border-gray-900 hover:bg-gray-900 hover:text-white transition duration-300 w-full sm:w-auto">Load More Stories</button>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: Sidebar (Sticky on Desktop, stacks on Mobile) -->
+        <aside class="w-full lg:w-1/3 space-y-6 sm:space-y-8 mt-8 lg:mt-0" id="community">
+            <div class="lg:sticky lg:top-28 space-y-6 sm:space-y-8">
+                
+                <!-- Trending Tags -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-extrabold text-gray-900 mb-4">Discover Topics</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs sm:text-sm font-semibold text-gray-600 hover:bg-gray-900 hover:text-white cursor-pointer transition">#SoloTravel</span>
+                        <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs sm:text-sm font-semibold text-gray-600 hover:bg-gray-900 hover:text-white cursor-pointer transition">#BudgetBackpack</span>
+                        <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs sm:text-sm font-semibold text-gray-600 hover:bg-gray-900 hover:text-white cursor-pointer transition">#LuxuryStays</span>
+                        <span class="px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-50 border border-gray-200 rounded-lg text-xs sm:text-sm font-semibold text-gray-600 hover:bg-gray-900 hover:text-white cursor-pointer transition">#RoadTrips</span>
+                    </div>
+                </div>
+
+                <!-- People Suggestions Widget -->
+                <div class="bg-white p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center mb-5 sm:mb-6">
+                        <h3 class="text-lg font-extrabold text-gray-900">Who to Follow</h3>
+                        <button class="text-blue-600 text-sm font-bold hover:underline">See All</button>
+                    </div>
+                    
+                    <div class="space-y-5 sm:space-y-6">
+                        <!-- User 1 -->
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3 sm:gap-4 cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://i.pravatar.cc/150?img=68" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" alt="User">
+                                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-blue-600 transition">Kabir Khan</h4>
+                                    <p class="text-[10px] sm:text-xs text-gray-500 font-medium">🌍 Backpacker • 12k follows</p>
+                                </div>
+                            </div>
+                            <button class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition">
+                                <i class="fas fa-plus text-xs sm:text-sm"></i>
+                            </button>
+                        </div>
+
+                        <!-- User 2 -->
+                        <div class="flex items-center justify-between group">
+                            <div class="flex items-center gap-3 sm:gap-4 cursor-pointer">
+                                <div class="relative">
+                                    <img src="https://i.pravatar.cc/150?img=44" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" alt="User">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-blue-600 transition">Neha Sharma</h4>
+                                    <p class="text-[10px] sm:text-xs text-gray-500 font-medium">📸 Photo • 8k follows</p>
+                                </div>
+                            </div>
+                            <button class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-900 hover:text-white transition">
+                                <i class="fas fa-plus text-xs sm:text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Subscription Box -->
+                <div class="bg-gradient-to-br from-gray-900 to-blue-900 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg text-white relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
+                    <div class="relative z-10">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 rounded-xl flex items-center justify-center text-xl sm:text-2xl mb-4 backdrop-blur-sm">
+                            <i class="fas fa-envelope-open-text text-blue-300"></i>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-extrabold mb-2">Weekly Wanderlust</h3>
+                        <p class="text-gray-300 text-xs sm:text-sm mb-5 sm:mb-6 font-medium">Top stories aur hidden gems direct apne inbox mein.</p>
+                        <form class="space-y-3">
+                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:bg-white/20 transition text-sm">
+                            <button class="w-full bg-blue-500 text-white font-bold py-3 rounded-xl hover:bg-blue-400 transition shadow-lg shadow-blue-500/30 text-sm">Subscribe Now</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+    </main>
+
+    <!-- Top Contributors Banner -->
+    <section class="bg-white border-y border-gray-100 py-10 sm:py-16 mt-4 sm:mt-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-6 sm:mb-8">Top Creators This Month</h2>
+            <div class="flex flex-wrap justify-center gap-6 sm:gap-16">
+                <div class="text-center cursor-pointer">
+                    <img src="https://i.pravatar.cc/150?img=33" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-2 sm:mb-3 border-4 border-gray-50 shadow-md">
+                    <h4 class="font-bold text-gray-900 text-sm sm:text-base">Vikram S.</h4>
+                </div>
+                <div class="text-center cursor-pointer">
+                    <img src="https://i.pravatar.cc/150?img=47" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-2 sm:mb-3 border-4 border-blue-100 shadow-md">
+                    <h4 class="font-bold text-gray-900 text-sm sm:text-base">Ananya I.</h4>
+                </div>
+                <div class="text-center cursor-pointer">
+                    <img src="https://i.pravatar.cc/150?img=12" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-2 sm:mb-3 border-4 border-gray-50 shadow-md">
+                    <h4 class="font-bold text-gray-900 text-sm sm:text-base">Rohan S.</h4>
+                </div>
+                <div class="text-center cursor-pointer hidden sm:block">
+                    <img src="https://i.pravatar.cc/150?img=5" class="w-20 h-20 rounded-full mx-auto mb-3 border-4 border-gray-50 shadow-md">
+                    <h4 class="font-bold text-gray-900">Priya D.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Contribute Section -->
+    <section id="contact" class="bg-[#f8fafc] py-12 sm:py-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-xl shadow-gray-200/50 border border-gray-100">
+                <!-- Info Panel -->
+                <div class="md:w-5/12 bg-blue-600 p-6 sm:p-10 text-white flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="relative z-10">
+                        <span class="text-blue-200 font-bold tracking-wider text-xs sm:text-sm uppercase mb-2 sm:mb-3 block">Share Your Journey</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6">Got a Story to Tell?</h2>
+                        <p class="text-blue-100 mb-6 sm:mb-8 text-sm sm:text-base leading-relaxed font-medium">Submit your travel draft. Agar aapki kahani mein dum hai, toh hum use front page par feature karenge!</p>
+                        <div class="space-y-3 sm:space-y-4">
+                            <div class="flex items-center gap-3 text-blue-100 font-medium text-sm sm:text-base">
+                                <i class="fas fa-check-circle text-white"></i> Reach 50k+ readers
+                            </div>
+                            <div class="flex items-center gap-3 text-blue-100 font-medium text-sm sm:text-base">
+                                <i class="fas fa-check-circle text-white"></i> Build your portfolio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="md:w-7/12 p-6 sm:p-10 md:p-12">
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-5 sm:mb-6">Submit Your Pitch</h3>
+                    <form action="#" class="space-y-4 sm:space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+                            <input type="text" placeholder="First Name" class="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white font-medium text-sm sm:text-base transition">
+                            <input type="email" placeholder="Email Address" class="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white font-medium text-sm sm:text-base transition">
+                        </div>
+                        <input type="text" placeholder="Working Title of your Blog" class="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white font-medium text-sm sm:text-base transition">
+                        <textarea rows="3" placeholder="Short summary of your story..." class="w-full p-3 sm:p-4 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white font-medium text-sm sm:text-base transition resize-none"></textarea>
+                        <button class="bg-gray-900 text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:bg-blue-600 transition w-full md:w-auto text-sm sm:text-base">
+                            Send Pitch <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-12 sm:pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-12">
+                <div class="col-span-1 sm:col-span-2 md:col-span-1 text-center sm:text-left">
+                    <div class="flex items-center justify-center sm:justify-start gap-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <span class="text-xl font-extrabold text-gray-900">Travel<span class="text-blue-600">Sphere</span></span>
+                    </div>
+                    <p class="text-gray-500 text-xs sm:text-sm font-medium mb-6">Empowering travelers to share their unfiltered journeys with the world.</p>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-gray-900 font-extrabold mb-3 sm:mb-4">Explore</h4>
+                    <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm font-medium text-gray-500">
+                        <li><a href="#" class="hover:text-blue-600 transition">Destinations</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Community</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-gray-900 font-extrabold mb-3 sm:mb-4">Company</h4>
+                    <ul class="space-y-2 sm:space-y-3 text-xs sm:text-sm font-medium text-gray-500">
+                        <li><a href="#" class="hover:text-blue-600 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-gray-900 font-extrabold mb-3 sm:mb-4">Follow Us</h4>
+                    <div class="flex justify-center sm:justify-start space-x-3 sm:space-x-4">
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-pink-600 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm font-medium text-gray-400 gap-3 sm:gap-4 text-center">
+                <p>&copy; 2026 TravelSphere. All rights reserved.</p>
+                <div class="flex gap-4 sm:gap-6">
+                    <a href="#" class="hover:text-gray-900 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-900 transition">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+    </script>
+</body>
+</html>
