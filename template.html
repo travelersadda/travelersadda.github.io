@@ -15,6 +15,7 @@
             <a href="about.html" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">About</a>
         </div>
     </div>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -75,7 +76,7 @@
   .wrap {
     max-width: var(--container);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 16px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -485,6 +486,69 @@
   /* Scroll reveal */
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* ===== Mobile Optimization Added ===== */
+  @media (max-width: 768px) {
+    .hero { padding: 24px 0; }
+    .hero h1 { font-size: 28px; line-height: 1.25; }
+    .hero-sub { font-size: 15px; }
+    .hero-meta { gap: 8px; font-size: 12px; }
+
+    .article-layout {
+      gap: 24px;
+      padding: 24px 0 40px;
+    }
+
+    .toc {
+      padding: 16px;
+    }
+
+    .toc li a {
+      font-size: 13px;
+      padding: 6px 8px;
+    }
+
+    .mid-cta {
+      padding: 22px;
+    }
+
+    .mid-cta h3 {
+      font-size: 18px;
+    }
+
+    .mid-cta p {
+      font-size: 14px;
+    }
+
+    .mid-cta .btn-primary,
+    .footer-cta .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .faq-question {
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 14px 14px;
+      font-size: 14px;
+    }
+
+    .footer-cta {
+      padding: 40px 16px;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    * {
+      max-width: 100%;
+    }
+  }
+
 </style>
 </head>
 <body>
